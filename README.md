@@ -56,44 +56,6 @@ Options:
 
 ## Features
 
-### Automatic software installation
-
-Homebrew formulae:
-
-* GNU core utilities
-* [git](http://git-scm.com/)
-* [ack](http://betterthangrep.com/)
-* [bash-completion](http://bash-completion.alioth.debian.org/)
-* jpeg
-* [macvim](http://code.google.com/p/macvim/)
-* [node](http://nodejs.org/)
-* [optipng](http://optipng.sourceforge.net/)
-* [phantomjs](http://phantomjs.org/)
-* [tree](http://mama.indstate.edu/users/ice/tree/)
-* [wget](http://www.gnu.org/software/wget/)
-
-Node packages:
-
-* [bower](http://bower.io/)
-* [grunt-cli](http://gruntjs.com/)
-* [jshint](http://www.jshint.com/)
-* [karma](http://karma-runner.github.io/)
-* [yo](http://yeoman.io/)
-
-Vim plugins:
-
-* [ctrlp.vim](https://github.com/kien/ctrlp.vim)
-* [html5.vim](https://github.com/othree/html5.vim)
-* [mustache.vim](https://github.com/juvenn/mustache.vim)
-* [syntastic](https://github.com/scrooloose/syntastic)
-* [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
-* [vim-git](https://github.com/tpope/vim-git)
-* [vim-haml](https://github.com/tpope/vim-haml)
-* [vim-javascript](https://github.com/pangloss/vim-javascript)
-* [vim-less](https://github.com/groenewege/vim-less)
-* [vim-markdown](https://github.com/tpope/vim-markdown)
-* [vim-pathogen](https://github.com/tpope/vim-pathogen)
-
 N.B. If your pre-existing Homebrew installation is not in `/usr/local` then you
 must prepend your custom installation's `bin` to the PATH in
 `.bash_profile.local`:
@@ -127,48 +89,8 @@ For more information on how to setup your backup-drive, please read the
 preparatory steps in this post on creating a [Mac OS X bootable backup
 drive](http://nicolasgallagher.com/mac-osx-bootable-backup-drive-with-rsync/).
 
-### Custom bash prompt
-
-I use a custom bash prompt based on the Solarized color palette and influenced
-by @gf3's and @cowboy's custom prompts. For best results, you should install
-iTerm2 and import [Solarized
-Dark.itermcolors](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized).
-
-When your current working directory is a Git repository, the prompt will
-display the checked-out branch's name (and failing that, the commit SHA that
-HEAD is pointing to). The state of the working tree is reflected in the
-following way:
-
-<table>
-    <tr>
-        <td><code>+</code></td>
-        <td>Uncommitted changes in the index</td>
-    </tr>
-    <tr>
-        <td><code>!</code></td>
-        <td>Unstaged changes</td>
-    </tr>
-    <tr>
-        <td><code>?</code></td>
-        <td>Untracked files</td>
-    </tr>
-    <tr>
-        <td><code>$</code></td>
-        <td>Stashed files</td>
-    </tr>
-</table>
-
-Further details are in the `bash_prompt` file.
-
-Screenshot:
-
-![](http://i.imgur.com/DSJ1G.png)
 
 ### Local and private configurations
-
-Any special-case Vim directives local to a machine should be stored in a
-`.vimrc.local` file on that machine. The directives will then be automatically
-imported into your master `.vimrc`.
 
 Any private and custom commands should be stored in a `~/.bash_profile.local`
 file. Any commands included in this file will not be under version control or
