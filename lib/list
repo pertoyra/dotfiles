@@ -4,7 +4,7 @@ run_list() {
 
 cat <<EOT
 
-OS X dotfiles - Nicolas Gallagher - http://nicolasgallagher.com/
+OS X dotfiles - Per Töyrä
 
 Additional software to install
 
@@ -14,24 +14,25 @@ Browsers:
     Opera
 
 Development:
-    Filezilla
-    iTerm 2
-    ImageAlpha
-    ImageOptim
-    VirtualBox
-    XAMPP
+    WebStorm
+    Oxygen XML
+    Xamarin
+    SourceTree
+    kdiff3
+    IntelliJ IDEA CE
+    Sublime Text
+    Transmit
 
 Other:
-    Alfred
-    Divvy
     Dropbox
-    Flux
-    KeePassX
-    LimeChat
-    Network Connect
+    Google Drive
     Skype
-    uTorrent
-    VLC
+    Folder Watch
+    Spotify
+    Microsoft Office
+    Things
+    Day One
+    CoRD
 EOT
 
 }
