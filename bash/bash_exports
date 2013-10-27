@@ -2,7 +2,7 @@
 
 # bash_config
 
-# Make vim the default editor
+# Make subl the default editor
 export EDITOR="subl"
 
 # Ignore duplicate commands in the history

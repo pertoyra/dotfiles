@@ -32,6 +32,7 @@ run_brew() {
             'wget'
             'saxon'
             'saxon-b'
+            'jmeter'
             'https://raw.github.com/Homebrew/homebrew-dupes/master/rsync.rb' # Avoid using any custom OS X version of rsync
         )
 
