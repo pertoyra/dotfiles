@@ -40,7 +40,5 @@ git_prompt ()
     echo " ($git_color$git_branch${c_reset})"
 }
  
-# Set the terminal title to the current working directory
-PS1="\[\033]0;\w\007\]"
 # Thy holy prompt.
-PS1="\u@\h:${c_path}\W${c_reset}$(git_prompt)\$ "
+PROMPT_COMMAND='PS1="\u@\h:${c_path}\W${c_reset}$(git_prompt)\$ "'
