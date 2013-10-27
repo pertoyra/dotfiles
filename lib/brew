@@ -20,6 +20,8 @@ run_brew() {
         local -a desired_formulae=(
             'coreutils' # GNU core utilities (those that come with OS X are outdated)
             'git'
+            'git-tf'
+            'rmtrash'
             'ack'
             'bash-completion'
             'jpeg'
@@ -28,6 +30,8 @@ run_brew() {
             'phantomjs'
             'tree'
             'wget'
+            'saxon'
+            'saxon-b'
             'https://raw.github.com/Homebrew/homebrew-dupes/master/rsync.rb' # Avoid using any custom OS X version of rsync
         )
 
