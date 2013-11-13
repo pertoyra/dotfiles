@@ -50,7 +50,7 @@
     excludesfile = ~/.gitignore
     attributesfile = ~/.gitattributes
     editor = subl -w
-    autocrlf = false
+    autocrlf = input
 
 [credential]
     helper = osxkeychain
