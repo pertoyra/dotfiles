@@ -11,7 +11,7 @@ sudo -v
 
 DST="/Volumes/Backup/"
 SRC="/"
-EXCLUDE="$HOME/.dotfiles/backup_excludes.txt"
+EXCLUDE="$HOME/.dotfiles/.backupignore"
 
 PROG=$0
 
