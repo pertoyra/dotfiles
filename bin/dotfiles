@@ -49,7 +49,7 @@ done
 # Before relying on Homebrew, check that packages can be compiled
 if ! type_exists 'gcc'; then
     e_error "The XCode Command Line Tools must be installed first."
-    printf "  Download them from: https://developer.apple.com/downloads\n"
+    printf "  Run: xcode-select --install\n"
     printf "  Then run: bash ~/.dotfiles/bin/dotfiles\n"
     exit 1
 fi
