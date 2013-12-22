@@ -56,15 +56,6 @@ Options:
 
 ## Features
 
-N.B. If your pre-existing Homebrew installation is not in `/usr/local` then you
-must prepend your custom installation's `bin` to the PATH in
-`.bash_profile.local`:
-
-```bash
-# Add `brew` command's custom location to PATH
-PATH="/opt/acme/bin:$PATH"
-```
-
 ### Custom OS X defaults
 
 Custom OS X settings can be applied during the `dotfiles` process. They can
@@ -76,10 +67,10 @@ $ osxdefaults
 
 ### Bootable backup-drive script
 
-These dotfiles include a script that will incrementally back up your data to an
-external, bootable clone of your computer's internal drive. First, make sure
-that the value of `DST` in the `bin/backup` script matches the name of your
-backup-drive. Then run the following command:
+These dotfiles include a script that uses `rync` to incrementally back up your
+data to an external, bootable clone of your computer's internal drive. First,
+make sure that the value of `DST` in the `bin/backup` script matches the name
+of your backup-drive. Then run the following command:
 
 ```bash
 $ backup
@@ -89,11 +80,10 @@ For more information on how to setup your backup-drive, please read the
 preparatory steps in this post on creating a [Mac OS X bootable backup
 drive](http://nicolasgallagher.com/mac-osx-bootable-backup-drive-with-rsync/).
 
+### Local/private Bash and Vim configuration
 
-### Local and private configurations
-
-Any private and custom commands should be stored in a `~/.bash_profile.local`
-file. Any commands included in this file will not be under version control or
+Any private and custom Bash commands and configuration should be placed in a
+`~/.bash_profile.local` file. This file will not be under version control or
 committed to a public repository. If `~/.bash_profile.local` exists, it will be
 sourced for inclusion in `bash_profile`.
 
@@ -107,8 +97,8 @@ export PATH
 # Git credentials
 # Not under version control to prevent people from
 # accidentally committing with your details
-GIT_AUTHOR_NAME="Nicolas Gallagher"
-GIT_AUTHOR_EMAIL="nicolas@example.com"
+GIT_AUTHOR_NAME="Per Töyrä"
+GIT_AUTHOR_EMAIL="per@example.com"
 GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 # Set the credentials (modifies ~/.gitconfig)
@@ -119,8 +109,8 @@ git config --global user.email "$GIT_AUTHOR_EMAIL"
 export PHANTOMJS_BIN="$(brew --prefix)/bin/phantomjs"
 ```
 
-The `git/gitconfig` file is copied to `~/.gitconfig`, so any private git
-configuration specified in `~/.bash_profile.local` will not be committed to
+N.B. Because the `git/gitconfig` file is copied to `~/.gitconfig`, any private
+git configuration specified in `~/.bash_profile.local` will not be committed to
 your dotfiles repository.
 
 

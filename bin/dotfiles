@@ -2,7 +2,7 @@
 
 DOTFILES_DIRECTORY="${HOME}/.dotfiles"
 DOTFILES_TARBALL_PATH="https://github.com/pertoyra/dotfiles/tarball/master"
-DOTFILES_GIT_REMOTE="https://github.com/pertoyra/dotfiles"
+DOTFILES_GIT_REMOTE="git@github.com:pertoyra/dotfiles.git"
 
 # If missing, download and extract the dotfiles repository
 if [[ ! -d ${DOTFILES_DIRECTORY} ]]; then
@@ -117,9 +117,10 @@ mirrorfiles() {
     # Create the necessary symbolic links between the `.dotfiles` and `HOME`
     # directory. The `bash_profile` sources other files directly from the
     # `.dotfiles` repository.
-    link "bash/bashrc"        ".bashrc"
-    link "bash/bash_profile"  ".bash_profile"
-    link "bash/inputrc"       ".inputrc"
+    link "shell/bashrc"       ".bashrc"
+    link "shell/bash_profile" ".bash_profile"
+    link "shell/curlrc"       ".curlrc"
+    link "shell/inputrc"      ".inputrc"
     link "git/gitattributes"  ".gitattributes"
     link "git/gitignore"      ".gitignore"
 
