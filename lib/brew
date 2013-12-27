@@ -36,6 +36,7 @@ run_brew() {
             'saxon'
             'saxon-b'
             'jmeter'
+            'kdiff3'
             'https://raw.github.com/Homebrew/homebrew-dupes/master/rsync.rb'
         )
 
