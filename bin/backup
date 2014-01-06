@@ -9,7 +9,7 @@ sudo -v
 # IMPORTANT: Make sure you update the `DST` variable to match the name of the
 # destination backup drive
 
-DST="/Volumes/Backup/"
+DST="/Volumes/Backup"
 SRC="/"
 EXCLUDE="$HOME/.dotfiles/bin/.backupignore"
 
@@ -24,6 +24,7 @@ PROG=$0
 # --one-file-system        don't cross device boundaries (ignore mounted volumes)
 # --sparse                 handle spare files efficiently
 # --verbose                increase verbosity
+# --fileflags              preserve file-flags (aka chflags)
 # --xattrs                 update the remote extended attributes to be the same as the local ones
 
 if [ ! -r "$SRC" ]; then
@@ -47,6 +48,7 @@ sudo rsync --acls \
            --one-file-system \
            --sparse \
            --verbose \
+           --fileflags \
            --xattrs \
            "$SRC" "$DST"
 

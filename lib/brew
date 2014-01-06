@@ -37,7 +37,6 @@ run_brew() {
             'saxon-b'
             'jmeter'
             'kdiff3'
-            'https://raw.github.com/Homebrew/homebrew-dupes/master/rsync.rb'
         )
 
         for index in ${!desired_formulae[*]}
