@@ -19,6 +19,7 @@ run_brew() {
         local -a missing_formulae
         local -a desired_formulae=(
             'coreutils' # GNU core utilities (those that come with OS X are outdated)
+            'ant'
             'git'
             'git-tf'
             'rmtrash'
