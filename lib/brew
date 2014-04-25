@@ -28,7 +28,6 @@ run_brew() {
             'bash-completion'
             'ffmpeg'
             'fontforge'
-            'eot-utils'
             'graphicsmagick'
             'jpeg'
             'node'
