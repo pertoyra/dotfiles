@@ -126,7 +126,7 @@
 
     added = green
     changed = yellow
-    untracked = pink
+    untracked = magenta
 
 [diff]
 

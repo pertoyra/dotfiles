@@ -16,7 +16,7 @@ run_npm() {
         )
 
         # Install packages globally and quietly
-        npm install ${packages[@]} --global --quiet
+        sudo npm install ${packages[@]} --global --quiet
 
         [[ $? ]] && e_success "Done"
     else
