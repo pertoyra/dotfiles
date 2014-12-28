@@ -21,24 +21,16 @@ run_brew() {
             'coreutils' # GNU core utilities (those that come with OS X are outdated)
             'ant'
             'git'
-            'git-tf'
             'rmtrash'
             'ack'
             'bash'
             'bash-completion'
-            'ffmpeg'
-            'fontforge'
-            'graphicsmagick'
             'jpeg'
             'node'
-            'optipng'
-            'phantomjs'
             'tree'
             'wget'
             'saxon'
             'saxon-b'
-            'jmeter'
-            'kdiff3'
         )
 
         for index in ${!desired_formulae[*]}

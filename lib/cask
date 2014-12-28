@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+# Install applications using Homebrew Cask.
+run_cask() {
+    
+    # Check for Homebrew
+    if ! type_exists 'brew'; then
+        e_error "Homebrew not installed, exiting..."
+        exit
+    fi
+
+    # Exit if, for some reason, cask is not installed.
+    if ! formula_exists 'brew-cask' ; then 
+        e_header "Installing Homebrew Cask..."
+        brew install caskroom/cask/brew-cask
+        [[ $? ]] && e_success "Done"
+    fi
+
+    local apps=(
+        dropbox
+        google-chrome
+        firefox
+        spotify
+        sublime-text3
+        skype
+        kdiff3
+    )
+
+    local quicklook=(
+        suspicious-package
+        quicklook-json
+        qlmarkdown
+        qlstephen
+        qlcolorcode
+    )
+
+    # Hack to show the first-run brew-cask password prompt immediately.
+    brew cask info this-is-somewhat-annoying 2>/dev/null
+
+    echo "Installing applications..."
+    brew cask install --appdir="/Applications" ${apps[@]}
+    [[ $? ]] && e_success "Done"
+
+    echo "Installing Quick Look plugins..."
+    brew cask install --appdir="/Applications/QuickLook" ${quicklook[@]}
+    [[ $? ]] && e_success "Done"
+
+    brew cask cleanup
+}

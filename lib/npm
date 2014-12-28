@@ -7,10 +7,16 @@ run_npm() {
         e_header "Installing Node.js packages..."
 
         # List of npm packages
-        local packages="bower gify grunt-cli jshint karma yo"
+        local packages=(
+            'bower'
+            'grunt-cli'
+            'gulp'
+            'jshint'
+            'karma'
+        )
 
         # Install packages globally and quietly
-        npm install $packages --global --quiet
+        npm install ${packages[@]} --global --quiet
 
         [[ $? ]] && e_success "Done"
     else
