@@ -19,18 +19,18 @@ run_brew() {
         local -a missing_formulae
         local -a desired_formulae=(
             'coreutils' # GNU core utilities (those that come with OS X are outdated)
-            'ant'
             'git'
             'rmtrash'
             'ack'
             'bash'
             'bash-completion'
-            'jpeg'
             'node'
             'tree'
-            'wget'
+            'wget --with-iri'
             'saxon'
             'saxon-b'
+            'nmap'
+            'google-app-engine'
         )
 
         for index in ${!desired_formulae[*]}
@@ -51,10 +51,6 @@ run_brew() {
 
             [[ $? ]] && e_success "Done"
         fi
-
-        # use latest rsync rather than out-dated OS X rsync
-        # install separately from the main formulae list to fix gh-19
-        brew install https://raw.github.com/Homebrew/homebrew-dupes/master/rsync.rb
 
         # Remove outdated versions from the Cellar
         brew cleanup
