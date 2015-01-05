@@ -22,6 +22,7 @@ source ./lib/help
 source ./lib/list
 source ./lib/utils
 source ./lib/brew
+source ./lib/cask
 source ./lib/npm
 
 # Help text
@@ -57,7 +58,7 @@ fi
 # Check for Homebrew
 if ! type_exists 'brew'; then
     e_header "Installing Homebrew..."
-    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 # Check for git
@@ -99,6 +100,8 @@ else
     printf "Updating packages...\n"
     # Install Homebrew formulae
     run_brew
+    # Install Homebrew Casks
+    run_cask
     # Install Node packages
     run_npm
 fi
