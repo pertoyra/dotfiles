@@ -18,12 +18,18 @@ run_cask() {
 
     local apps=(
         dropbox
+	google-drive
         google-chrome
         firefox
         spotify
-        sublime-text3
+        sublime-text
         skype
         kdiff3
+	cyberduck
+	sourcetree
+	things
+	webstorm
+	ynab
     )
 
     local quicklook=(
