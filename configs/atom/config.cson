@@ -1,0 +1,19 @@
+'*':
+  'exception-reporting':
+    'userId': 'd89eed16-2bbb-b0f6-5367-5c5e28df6f40'
+  'welcome':
+    'showOnStartup': false
+  'editor':
+    'fontFamily': 'Consolas, Monaco, Courier New, monospace'
+    'lineHeight': 1.2
+    'showIndentGuide': true
+    'showInvisibles': true
+    'tabLength': 4
+    'fontSize': 14
+    'invisibles': {}
+  'core':
+    'themes': [
+      'solarized-dark-ui'
+      'solarized-dark-syntax'
+    ]
+  'linter': {}

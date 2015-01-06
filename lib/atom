@@ -1,0 +1,42 @@
+#!/bin/bash
+
+run_atom() {
+
+  if ! type_exists 'atom'; then
+    e_error "Atom editor not installed, exiting..."
+    exit
+  fi
+
+  if ! type_exists 'apm'; then
+    e_error "Atom package manager not found, exiting..."
+    exit
+  fi
+
+  # List packages to be installed
+  local packages=(
+    emmet
+    minimap
+    merge-conflicts
+    color-picker
+    linter
+    linter-jshint
+    linter-scss-lint
+    linter-less
+    linter-csslint
+    linter-xmllint
+    editorconfig
+    solarized-dark-ui
+  )
+
+  # Install Atom packages
+  e_header "Installing Atom packages..."
+  apm install ${packages[@]}
+
+  [[ $? ]] && e_success "Done"
+
+  # Cleanup
+  apm clean
+
+  # Copy configuration files to ~/.atom
+  
+}

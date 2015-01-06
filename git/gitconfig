@@ -126,7 +126,7 @@
 
     added = green
     changed = yellow
-    untracked = magenta
+    untracked = red
 
 [diff]
 
@@ -149,28 +149,6 @@
     # installations. To use `simple` instead, add this to your `~/.extra` file:
     # `git config --global push.default simple`. See http://git.io/mMah-w.
     default = matching
-
-# URL shorthands
-
-[url "git@github.com:"]
-
-    insteadOf = "gh:"
-    pushInsteadOf = "github:"
-    pushInsteadOf = "git://github.com/"
-
-[url "git://github.com/"]
-
-    insteadOf = "github:"
-
-[url "git@gist.github.com:"]
-
-    insteadOf = "gst:"
-    pushInsteadOf = "gist:"
-    pushInsteadOf = "git://gist.github.com/"
-
-[url "git://gist.github.com/"]
-
-    insteadOf = "gist:"
 
 [difftool "kdiff3"]
 

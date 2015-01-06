@@ -12,7 +12,6 @@ run_npm() {
             'grunt-cli'
             'gulp'
             'jshint'
-            'karma'
         )
 
         # Install packages globally and quietly

@@ -4,6 +4,12 @@ DOTFILES_DIRECTORY="${HOME}/.dotfiles"
 DOTFILES_TARBALL_PATH="https://github.com/pertoyra/dotfiles/tarball/master"
 DOTFILES_GIT_REMOTE="https://github.com/pertoyra/dotfiles.git"
 
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `.osx` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 # If missing, download and extract the dotfiles repository
 if [[ ! -d ${DOTFILES_DIRECTORY} ]]; then
     printf "$(tput setaf 7)Downloading dotfiles...\033[m\n"
@@ -24,6 +30,7 @@ source ./lib/utils
 source ./lib/brew
 source ./lib/cask
 source ./lib/npm
+source ./lib/atom
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
@@ -104,6 +111,8 @@ else
     run_cask
     # Install Node packages
     run_npm
+    # Install Atom packages and copy configurations
+    run_atom
 fi
 
 link() {
@@ -120,13 +129,20 @@ mirrorfiles() {
     # Create the necessary symbolic links between the `.dotfiles` and `HOME`
     # directory. The `bash_profile` sources other files directly from the
     # `.dotfiles` repository.
-    link "shell/bashrc"             ".bashrc"
-    link "shell/bash_profile"       ".bash_profile"
-    link "shell/curlrc"             ".curlrc"
-    link "shell/inputrc"            ".inputrc"
-    link "git/gitattributes"        ".gitattributes"
-    link "git/gitignore"            ".gitignore"
-    link "configs/editorconfig"     ".editorconfig"
+    link "shell/bashrc"               ".bashrc"
+    link "shell/bash_profile"         ".bash_profile"
+    link "shell/curlrc"               ".curlrc"
+    link "shell/inputrc"              ".inputrc"
+    link "git/gitattributes"          ".gitattributes"
+    link "git/gitignore"              ".gitignore"
+    link "configs/editorconfig"       ".editorconfig"
+
+    # Atom configuration
+    link "configs/atom/config.cson"   ".atom/config.cson"
+    link "configs/atom/init.coffee"   ".atom/init.coffee"
+    link "configs/atom/keymap.cson"   ".atom/keymap.cson"
+    link "configs/atom/snippets.cson" ".atom/snippets.cson"
+    link "configs/atom/styles.less"   ".atom/config.cson"
 
     e_success "Dotfiles update complete!"
 }
