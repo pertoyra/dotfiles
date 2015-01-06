@@ -2,7 +2,7 @@
 
 # Install applications using Homebrew Cask.
 run_cask() {
-    
+
     # Check for Homebrew
     if ! type_exists 'brew'; then
         e_error "Homebrew not installed, exiting..."
@@ -10,13 +10,16 @@ run_cask() {
     fi
 
     # Exit if, for some reason, cask is not installed.
-    if ! formula_exists 'brew-cask' ; then 
+    if ! formula_exists 'brew-cask' ; then
         e_header "Installing Homebrew Cask..."
         brew install caskroom/cask/brew-cask
         [[ $? ]] && e_success "Done"
     fi
 
-    local apps=(
+    e_header "Checking status of desired Homebrew casks..."
+    local list_apps
+    local -a missing_apps
+    local -a desired_apps=(
         dropbox
         google-drive
         google-chrome
@@ -32,26 +35,37 @@ run_cask() {
         ynab
         the-unarchiver
         atom
+        suspicious-package # quicklook
+        quicklook-json # quicklook
+        qlmarkdown # quicklook
+        qlstephen # quicklook
+        qlcolorcode # quicklook
     )
 
-    local quicklook=(
-        suspicious-package
-        quicklook-json
-        qlmarkdown
-        qlstephen
-        qlcolorcode
-    )
+    for index in ${!desired_apps[*]}
+    do
+        if ! cask_exists ${desired_apps[$index]}; then
+            # Store the name (and options) of every missing app
+            missing_apps=("${missing_apps[@]}" "${desired_apps[$index]}")
+        fi
+    done
 
-    # Hack to show the first-run brew-cask password prompt immediately.
-    brew cask info this-is-somewhat-annoying 2>/dev/null
+    if [[ "$missing_apps" ]]; then
+        # Convert the array of missing apps into a list of space-separate strings
+        list_apps=$( printf "%s " "${missing_apps[@]}" )
 
-    echo "Installing applications..."
-    brew cask install --appdir="/Applications" ${apps[@]}
-    [[ $? ]] && e_success "Done"
+        # Hack to show the first-run brew-cask password prompt immediately.
+        brew cask info this-is-somewhat-annoying 2>/dev/null
 
-    echo "Installing Quick Look plugins..."
-    brew cask install --appdir="/Applications/QuickLook" ${quicklook[@]}
-    [[ $? ]] && e_success "Done"
+        e_header "Installing missing apps..."
+        # Install all missing apps
+        brew cask install --appdir="/Applications" $list_apps
 
-    brew cask cleanup
+        [[ $? ]] && e_success "Done"
+    fi
+
+	e_header "Cleans up cached cask downloads"
+	brew cask cleanup
+
+	[[ $? ]] && e_success "Done"
 }

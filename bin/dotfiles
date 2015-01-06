@@ -137,13 +137,6 @@ mirrorfiles() {
     link "git/gitignore"              ".gitignore"
     link "configs/editorconfig"       ".editorconfig"
 
-    # Atom configuration
-    link "configs/atom/config.cson"   ".atom/config.cson"
-    link "configs/atom/init.coffee"   ".atom/init.coffee"
-    link "configs/atom/keymap.cson"   ".atom/keymap.cson"
-    link "configs/atom/snippets.cson" ".atom/snippets.cson"
-    link "configs/atom/styles.less"   ".atom/config.cson"
-
     e_success "Dotfiles update complete!"
 }
 

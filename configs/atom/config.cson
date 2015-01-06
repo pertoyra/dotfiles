@@ -5,11 +5,11 @@
     'showOnStartup': false
   'editor':
     'fontFamily': 'Consolas, Monaco, Courier New, monospace'
-    'lineHeight': 1.2
-    'showIndentGuide': true
-    'showInvisibles': true
-    'tabLength': 4
     'fontSize': 14
+    'lineHeight': 1.2
+    'showInvisibles': true
+    'showIndentGuide': true
+    'tabLength': 4
     'invisibles': {}
   'core':
     'themes': [

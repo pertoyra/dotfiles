@@ -468,6 +468,27 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 ###############################################################################
+# Shortcuts                                                                   #
+###############################################################################
+
+# http://hints.macworld.com/article.php?story=20131123074223584
+# modifier key legend:
+#  @ = command
+#  ^ = control
+#  ~ = option
+#  $ = shift
+
+# Global shortcuts
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Move focus to next window" -string "@~\U003C"
+
+# Application Windows
+# Mission Control
+
+# Mail
+# Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
+#defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\U21a9"
+
+###############################################################################
 # Mail                                                                        #
 ###############################################################################
 
@@ -477,9 +498,6 @@ defaults write com.apple.mail DisableSendAnimations -bool true
 
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
-
-# Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
-#defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\U21a9"
 
 # Display emails in threaded mode, sorted by date (oldest at the top)
 defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"

@@ -2,41 +2,46 @@
 
 run_atom() {
 
-  if ! type_exists 'atom'; then
-    e_error "Atom editor not installed, exiting..."
-    exit
-  fi
+    if ! type_exists 'atom'; then
+        e_error "Atom editor not installed, exiting..."
+        exit
+    fi
 
-  if ! type_exists 'apm'; then
-    e_error "Atom package manager not found, exiting..."
-    exit
-  fi
+    if ! type_exists 'apm'; then
+        e_error "Atom package manager not found, exiting..."
+        exit
+    fi
 
-  # List packages to be installed
-  local packages=(
-    emmet
-    minimap
-    merge-conflicts
-    color-picker
-    linter
-    linter-jshint
-    linter-scss-lint
-    linter-less
-    linter-csslint
-    linter-xmllint
-    editorconfig
-    solarized-dark-ui
-  )
+    # Copy Atom configuration
+    cp -f configs/atom/config.cson \
+          configs/atom/init.coffee \
+          configs/atom/keymap.cson \
+          configs/atom/snippets.cson \
+          configs/atom/styles.less \
+          ~/.atom
 
-  # Install Atom packages
-  e_header "Installing Atom packages..."
-  apm install ${packages[@]}
+    # List packages to be installed
+    local packages=(
+        emmet
+        minimap
+        merge-conflicts
+        color-picker
+        linter
+        linter-jshint
+        linter-scss-lint
+        linter-less
+        linter-csslint
+        linter-xmllint
+        editorconfig
+        solarized-dark-ui
+    )
 
-  [[ $? ]] && e_success "Done"
+    # Install Atom packages
+    e_header "Installing Atom packages..."
+    apm install ${packages[@]}
 
-  # Cleanup
-  apm clean
+    [[ $? ]] && e_success "Done"
 
-  # Copy configuration files to ~/.atom
-  
+    # Cleanup
+    apm clean
 }
