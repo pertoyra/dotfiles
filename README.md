@@ -103,9 +103,6 @@ GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 # Set the credentials (modifies ~/.gitconfig)
 git config --global user.name "$GIT_AUTHOR_NAME"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
-
-# Export PhantomJS bin location for custom Homebrew directory
-export PHANTOMJS_BIN="$(brew --prefix)/bin/phantomjs"
 ```
 
 N.B. Because the `git/gitconfig` file is copied to `~/.gitconfig`, any private
