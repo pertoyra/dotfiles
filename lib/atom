@@ -33,6 +33,7 @@ run_atom() {
         linter-csslint
         linter-xmllint
         editorconfig
+        xml-formatter
         solarized-dark-ui
     )
 
