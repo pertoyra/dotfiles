@@ -54,9 +54,9 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Before relying on Homebrew, check that packages can be compiled
-if ! type_exists 'gcc'; then
-    e_error "The XCode Command Line Tools must be installed first."
+# Before relying on Homebrew, check that packages can be compiled by verifying that XCode is installed
+if ! xcode-select -p &> /dev/null; then
+    printf "The XCode Command Line Tools must be installed first.\n"
     printf "  Run: xcode-select --install\n"
     printf "  Then run this script again\n"
     exit 1
