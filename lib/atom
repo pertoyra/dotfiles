@@ -35,6 +35,7 @@ run_atom() {
         editorconfig
         xml-formatter
         solarized-dark-ui
+        atom-beautify
     )
 
     # Install Atom packages

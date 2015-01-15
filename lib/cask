@@ -33,7 +33,6 @@ run_cask() {
         things
         webstorm
         ynab
-        the-unarchiver
         atom
         suspicious-package # quicklook
         quicklook-json # quicklook

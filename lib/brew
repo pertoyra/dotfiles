@@ -30,7 +30,6 @@ run_brew() {
             'saxon'
             'saxon-b'
             'nmap'
-            'google-app-engine'
         )
 
         for index in ${!desired_formulae[*]}
