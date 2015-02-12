@@ -12,6 +12,17 @@ run_atom() {
         exit
     fi
 
+    e_header "Updating Atom packages..."
+    # Use the latest version of Homebrew
+    apm update
+    [[ $? ]] && e_success "Done"
+
+    e_header "Updating any existing Atom packages..."
+    # Upgrade any already-installed formulae
+    apm upgrade
+    [[ $? ]] && e_success "Done"
+
+    e_header "Copying Atom configuration..."
     # Copy Atom configuration
     cp -f configs/atom/config.cson \
           configs/atom/init.coffee \
@@ -20,8 +31,13 @@ run_atom() {
           configs/atom/styles.less \
           ~/.atom
 
+    [[ $? ]] && e_success "Done"
+
+    e_header "Checking status of desired Homebrew formulae..."
+
     # List packages to be installed
-    local packages=(
+    local -a missing_packages
+    local -a desired_packages=(
         emmet
         minimap
         merge-conflicts
@@ -36,13 +52,25 @@ run_atom() {
         xml-formatter
         solarized-dark-ui
         atom-beautify
+        trailing-spaces
+        autocomplete-plus
     )
 
-    # Install Atom packages
-    e_header "Installing Atom packages..."
-    apm install ${packages[@]}
+    for index in ${!desired_packages[*]}
+    do
+        if ! apm_exists ${desired_packages[$index]}; then
+            # Store the name (and options) of every missing package
+            missing_packages=("${missing_packages[@]}" "${desired_packages[$index]}")
+        fi
+    done
 
-    [[ $? ]] && e_success "Done"
+    if [[ "$missing_packages" ]]; then
+        # Install Atom packages
+        e_header "Installing missing Atom packages..."
+        apm install ${missing_packages[@]}
+
+        [[ $? ]] && e_success "Done"
+    fi
 
     # Cleanup
     apm clean

@@ -30,6 +30,7 @@ run_brew() {
             'saxon'
             'saxon-b'
             'nmap'
+            'mono'
         )
 
         for index in ${!desired_formulae[*]}
