@@ -44,7 +44,6 @@ run_atom() {
         color-picker
         linter
         linter-jshint
-        linter-scss-lint
         linter-less
         linter-csslint
         linter-xmllint
@@ -54,6 +53,7 @@ run_atom() {
         atom-beautify
         trailing-spaces
         autocomplete-plus
+        sort-lines
     )
 
     for index in ${!desired_packages[*]}

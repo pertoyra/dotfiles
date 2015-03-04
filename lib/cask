@@ -34,11 +34,6 @@ run_cask() {
         webstorm
         ynab
         atom
-        suspicious-package # quicklook
-        quicklook-json # quicklook
-        qlmarkdown # quicklook
-        qlstephen # quicklook
-        qlcolorcode # quicklook
     )
 
     for index in ${!desired_apps[*]}
