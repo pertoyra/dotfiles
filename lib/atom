@@ -54,6 +54,7 @@ run_atom() {
         trailing-spaces
         autocomplete-plus
         sort-lines
+        pretty-json
     )
 
     for index in ${!desired_packages[*]}
