@@ -55,6 +55,8 @@ run_atom() {
         autocomplete-plus
         sort-lines
         pretty-json
+        highlight-line
+        line-ending-converter
     )
 
     for index in ${!desired_packages[*]}
