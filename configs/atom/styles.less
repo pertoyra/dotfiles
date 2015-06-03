@@ -8,14 +8,23 @@
  * http://www.lesscss.org
  */
 
-.tree-view {
-
+/* atom-text-editor::shadow .selection .region {
+	background-color: rgba(255, 255, 0, 0.2);
 }
 
-atom-text-editor {
+atom-text-editor.is-focused::shadow  .selection .region {
+	background-color: rgba(255, 255, 0, 0.2);
+} */
 
+
+atom-text-editor::shadow {
+  .selection .region {
+    background-color: lighten(#073642, 10%);
+  }
 }
 
-atom-text-editor .cursor {
-
+atom-text-editor.is-focused::shadow {
+  .selection .region {
+    background-color: lighten(#002b36, 10%);
+  }
 }
