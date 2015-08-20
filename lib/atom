@@ -52,7 +52,6 @@ run_atom() {
         solarized-dark-ui
         atom-beautify
         trailing-spaces
-        autocomplete-plus
         sort-lines
         pretty-json
         highlight-line
