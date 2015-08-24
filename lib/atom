@@ -55,6 +55,7 @@ run_atom() {
         pretty-json
         highlight-line
         line-ending-converter
+        file-icons
     )
 
     for index in ${!desired_packages[*]}
