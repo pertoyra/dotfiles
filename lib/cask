@@ -16,6 +16,9 @@ run_cask() {
         [[ $? ]] && e_success "Done"
     fi
 
+    # Adding more repos
+    brew tap caskroom/versions
+
     e_header "Checking status of desired Homebrew casks..."
     local list_apps
     local -a missing_apps
@@ -25,7 +28,7 @@ run_cask() {
         google-chrome
         firefox
         spotify
-        sublime-text
+        sublime-text3
         skype
         kdiff3
         cyberduck

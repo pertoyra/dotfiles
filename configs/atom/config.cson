@@ -13,7 +13,7 @@
     'invisibles': {}
   'core':
     'themes': [
-      'solarized-dark-ui'
-      'solarized-dark-syntax'
+      'one-dark-ui'
+      'one-dark-syntax'
     ]
   'linter': {}

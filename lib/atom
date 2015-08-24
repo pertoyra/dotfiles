@@ -49,7 +49,6 @@ run_atom() {
         linter-xmllint
         editorconfig
         xml-formatter
-        solarized-dark-ui
         atom-beautify
         trailing-spaces
         sort-lines
