@@ -94,7 +94,7 @@
     whitespace = fix
 
 [core]
-    editor = subl -w
+    editor = atom --wait
 
     # Use custom `.gitignore` and `.gitattributes`
     excludesfile = ~/.gitignore
