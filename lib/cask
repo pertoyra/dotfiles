@@ -37,6 +37,7 @@ run_cask() {
         webstorm
         ynab
         atom
+        visual-studio-code
     )
 
     for index in ${!desired_apps[*]}

@@ -12,6 +12,7 @@ run_npm() {
             'grunt-cli'
             'gulp'
             'jshint'
+            'node-sass'
         )
 
         # Install packages globally and quietly
