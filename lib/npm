@@ -8,8 +8,8 @@ run_npm() {
 
         # List of npm packages
         local packages=(
-            'bower'
-            'grunt-cli'
+            #'bower'
+            #'grunt-cli'
             'gulp'
             'jshint'
             'node-sass'
