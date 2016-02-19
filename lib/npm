@@ -11,7 +11,7 @@ run_npm() {
             #'bower'
             #'grunt-cli'
             'gulp'
-            'jshint'
+            'eslint'
             'node-sass'
         )
 
