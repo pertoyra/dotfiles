@@ -62,16 +62,6 @@ formula_exists() {
     return 1
 }
 
-cask_exists() {
-	if $(brew cask list $1 >/dev/null); then
-		printf "%s already installed.\n" "$1"
-		return 0
-	fi
-
-	e_warning "Missing cask: $1"
-	return 1
-}
-
 apm_exists() {
     if $(apm list --installed --bare | grep $1 >/dev/null); then
         printf "%s already installed.\n" "$1"

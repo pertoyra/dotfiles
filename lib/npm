@@ -8,11 +8,11 @@ run_npm() {
 
         # List of npm packages
         local packages=(
-            #'bower'
-            #'grunt-cli'
-            'gulp'
+            'http-server'
+            'nodemon'
+            'create-react-app'
             'eslint'
-            'node-sass'
+            'rimraf'
         )
 
         # Install packages globally and quietly

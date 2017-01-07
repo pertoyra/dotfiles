@@ -1,19 +1,18 @@
-'*':
-  'exception-reporting':
-    'userId': 'd89eed16-2bbb-b0f6-5367-5c5e28df6f40'
-  'welcome':
-    'showOnStartup': false
-  'editor':
-    'fontFamily': 'Consolas, Monaco, Courier New, monospace'
-    'fontSize': 14
-    'lineHeight': 1.2
-    'showInvisibles': true
-    'showIndentGuide': true
-    'tabLength': 4
-    'invisibles': {}
-  'core':
-    'themes': [
-      'one-dark-ui'
-      'one-dark-syntax'
+"*":
+  "exception-reporting":
+    "userId": "7bd23bde-1a99-670e-d321-dfb1dc0ee568"
+  "welcome":
+    "showOnStartup": false
+  "editor":
+    "fontFamily": "SF Mono, Consolas, Monaco, Courier, monospace;"
+    "fontSize": 14
+    "lineHeight": 1.5
+    "showInvisibles": true
+    "showIndentGuide": true
+    "tabLength": 4
+  "core":
+    "telemetryConsent": "limited"
+    "themes": [
+      "one-dark-ui"
+      "one-dark-syntax"
     ]
-  'linter': {}

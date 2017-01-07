@@ -19,22 +19,14 @@ fi
 cd ${DOTFILES_DIRECTORY}
 
 source ./lib/help
-source ./lib/list
 source ./lib/utils
 source ./lib/brew
-source ./lib/cask
 source ./lib/npm
 source ./lib/atom
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
     run_help
-    exit
-fi
-
-# List additional software to install
-if [[ "$1" == "-l" || "$1" == "--list" ]]; then
-    run_list
     exit
 fi
 
@@ -47,12 +39,6 @@ do
         -*|--*) e_warning "Warning: invalid option $opt" ;;
     esac
 done
-
-# Ask for the administrator password upfront
-sudo -v
-
-# Keep-alive: update existing `sudo` time stamp until `.osx` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Before relying on Homebrew, check that packages can be compiled by verifying that XCode is installed
 if ! xcode-select -p &> /dev/null; then
@@ -107,8 +93,6 @@ else
     printf "Updating packages...\n"
     # Install Homebrew formulae
     run_brew
-    # Install Homebrew Casks
-    run_cask
     # Install Node packages
     run_npm
     # Install Atom packages and copy configurations
@@ -151,12 +135,12 @@ else
     exit 1
 fi
 
-# Ask before potentially overwriting OS X defaults
-seek_confirmation "Warning: This step may modify your OS X system defaults."
+# Ask before potentially overwriting macOS defaults
+seek_confirmation "Warning: This step may modify your macOS system defaults."
 
 if is_confirmed; then
-    bash ./bin/osxdefaults
-    e_success "OS X settings updated! You may need to restart."
+    bash ./bin/macosdefaults
+    e_success "Successfully updated macOS settings! You may need to restart."
 else
-    printf "Skipped OS X settings update.\n"
+    printf "Skipped macOS settings update.\n"
 fi

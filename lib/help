@@ -3,13 +3,12 @@
 run_help() {
 
 cat <<EOT
-OS X dotfiles - Per Töyrä
+macOS dotfiles - Per Töyrä
 
 Usage: $(basename "$0") [options]
 
 Options:
     -h, --help      Print this help text
-    -l, --list      Print a list of additional software to install
     --no-packages   Suppress package updates
     --no-sync       Suppress pulling from the remote repository
 

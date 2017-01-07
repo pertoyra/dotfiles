@@ -18,22 +18,19 @@ run_brew() {
         local list_formulae
         local -a missing_formulae
         local -a desired_formulae=(
-            'coreutils' # GNU core utilities (those that come with OS X are outdated)
+            'coreutils' # GNU core utilities (those that come with macOS are outdated)
             'git'
-            'git-lts'
             'rmtrash'
             'ack'
             'bash'
-            'bash-completion'
-            'node'
+            'bash-completion2'
+            'node --with-full-icu'
             'tree'
             'wget --with-iri'
-            'saxon'
-            'saxon-b'
-            'nmap'
-            #'mono'
-            #'ant'
         )
+
+        # Tap necessary formulaes
+        brew tap homebrew/versions
 
         for index in ${!desired_formulae[*]}
         do
@@ -47,8 +44,8 @@ run_brew() {
             # Convert the array of missing formula into a list of space-separate strings
             list_formulae=$( printf "%s " "${missing_formulae[@]}" )
 
-            e_header "Installing missing Homebrew formulae..."
             # Install all missing formulae
+            e_header "Installing missing Homebrew formulae..."
             brew install $list_formulae
 
             [[ $? ]] && e_success "Done"

@@ -1,6 +1,6 @@
 # Dotfiles (Per Töyrä)
 
-My OS X dotfiles, forked from [Nicolas Gallagher](https://github.com/necolas/dotfiles).
+My macOS dotfiles, forked from [Nicolas Gallagher](https://github.com/necolas/dotfiles).
 
 
 ## How to install
@@ -40,10 +40,6 @@ Options:
         <td>Help</td>
     </tr>
     <tr>
-        <td><code>-l</code>, <code>--list</code></td>
-        <td>List of additional applications to install</td>
-    </tr>
-    <tr>
         <td><code>--no-packages</code></td>
         <td>Suppress package updates</td>
     </tr>
@@ -55,31 +51,16 @@ Options:
 
 
 ## Features
-### Custom OS X defaults
+### Custom macOS defaults
 
-Custom OS X settings can be applied during the `dotfiles` process. They can
+Custom macOS settings can be applied during the `dotfiles` process. They can
 also be applied independently by running the following command:
 
 ```bash
-$ osxdefaults
+$ macosdefaults
 ```
 
-### Bootable backup-drive script
-
-These dotfiles include a script that uses `rsync` to incrementally back up your
-data to an external, bootable clone of your computer's internal drive. First,
-make sure that the value of `DST` in the `bin/backup` script matches the name
-of your backup-drive. Then run the following command:
-
-```bash
-$ backup
-```
-
-For more information on how to setup your backup-drive, please read the
-preparatory steps in this post on creating a [Mac OS X bootable backup
-drive](http://nicolasgallagher.com/mac-osx-bootable-backup-drive-with-rsync/).
-
-### Local/private Bash and Vim configuration
+### Local/private Bash configuration
 
 Any private and custom Bash commands and configuration should be placed in a
 `~/.bash_profile.local` file. This file will not be under version control or
@@ -109,55 +90,12 @@ N.B. Because the `git/gitconfig` file is copied to `~/.gitconfig`, any private
 git configuration specified in `~/.bash_profile.local` will not be committed to
 your dotfiles repository.
 
-
-## Adding new git submodules
-
-If you want to add more git submodules, e.g., Vim plugins to be managed by
-pathogen, then follow these steps while in the root of the superproject.
-
-```bash
-# Add the new submodule
-git submodule add https://example.com/remote/path/to/repo.git vim/bundle/one-submodule
-# Initialize and clone the submodule
-git submodule update --init
-# Stage the changes
-git add vim/bundle/one-submodule
-# Commit the changes
-git commit -m "Add a new submodule: one-submodule"
-```
-
-
-## Updating git submodules
-
-Updating individual submodules within the superproject:
-
-```bash
-# Change to the submodule directory
-cd vim/bundle/one-submodule
-# Checkout the desired branch (of the submodule)
-git checkout master
-# Pull from the tip of master (of the submodule - could be any sha or pointer)
-git pull origin master
-# Go back to main dotfiles repo root
-cd ../../..
-# Stage the submodule changes
-git add vim/bundle/one-submodule
-# Commit the submodule changes
-git commit -m "Update submodule 'one-submodule' to the latest version"
-# Push to a remote repository
-git push origin master
-```
-
-Now, if anyone updates their local repository from the remote repository, then
-using `git submodule update` will update the submodules (that have been
-initialized) in their local repository. N.B This will wipe away any local
-changes made to those submodules.
-
-
 ## Acknowledgements
 
 Inspiration and code was taken from many sources, including:
 
+* [@necolas](https://github.com/necolas/) (Nicolas Gallagher)
+  [https://github.com/necolas/dotfiles](https://github.com/necolas/dotfiles)
 * [@mathiasbynens](https://github.com/mathiasbynens) (Mathias Bynens)
   [https://github.com/mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
 * [@tejr](https://github.com/tejr) (Tom Ryder)

@@ -13,12 +13,11 @@ run_atom() {
     fi
 
     e_header "Updating Atom packages..."
-    # Use the latest version of Homebrew
     apm update
     [[ $? ]] && e_success "Done"
 
     e_header "Updating any existing Atom packages..."
-    # Upgrade any already-installed formulae
+    # Upgrade any already-installed package
     apm upgrade
     [[ $? ]] && e_success "Done"
 
@@ -33,28 +32,15 @@ run_atom() {
 
     [[ $? ]] && e_success "Done"
 
-    e_header "Checking status of desired Homebrew formulae..."
+    e_header "Checking status of desired package..."
 
     # List packages to be installed
     local -a missing_packages
     local -a desired_packages=(
         emmet
         minimap
-        merge-conflicts
-        color-picker
-        linter
-        linter-jshint
-        linter-less
-        linter-csslint
-        linter-xmllint
         editorconfig
-        xml-formatter
         atom-beautify
-        trailing-spaces
-        sort-lines
-        pretty-json
-        highlight-line
-        line-ending-converter
         file-icons
     )
 
