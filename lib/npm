@@ -11,6 +11,7 @@ run_npm() {
             'http-server'
             'nodemon'
             'create-react-app'
+            'vue-cli'
             'eslint'
             'rimraf'
         )
