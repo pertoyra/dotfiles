@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Ask before setting hostname
+seek_confirmation "Would you like to change your hostname? (current: \"$(hostname)\")"
+
+if is_confirmed; then
+  printf "New hostname: "
+  read new_hostname
+  sudo scutil --set ComputerName ${new_hostname}
+  sudo scutil --set HostName ${new_hostname}
+  sudo scutil --set LocalHostName ${new_hostname}
+  sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string ${new_hostname}
+  e_success "Successfully updated hostname. You may need to restart."
+else
+  printf "Skipped updating hostname.\n"
+fi
