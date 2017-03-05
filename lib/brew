@@ -27,6 +27,7 @@ run_brew() {
             'node --with-full-icu'
             'tree'
             'wget --with-iri'
+            'yarn'
         )
 
         # Tap necessary formulaes
