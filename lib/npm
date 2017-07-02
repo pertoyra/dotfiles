@@ -14,6 +14,8 @@ run_npm() {
             'vue-cli'
             'eslint'
             'rimraf'
+            'npm-check-updates'
+            'a11y'
         )
 
         # Install packages globally and quietly

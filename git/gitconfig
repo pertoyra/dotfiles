@@ -37,7 +37,6 @@
     #sync = !sh -c 'git checkout --quiet HEAD; git fetch upstream master:master; git checkout --quiet -'
     sync = "!f() { git checkout --quiet --detach HEAD; git fetch origin \"$1\":\"$1\"; git checkout --quiet -; }; f"
 
-
     # Show verbose output about tags, branches or remotes
     tags = tag -l
     branches = branch -a
