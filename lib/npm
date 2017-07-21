@@ -11,7 +11,7 @@ run_npm() {
             'http-server'
             'nodemon'
             'create-react-app'
-            'vue-cli'
+            'create-react-native-app'
             'eslint'
             'rimraf'
             'npm-check-updates'
