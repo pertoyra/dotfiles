@@ -8,13 +8,15 @@ run_npm() {
 
         # List of npm packages
         local packages=(
-            'http-server'
-            'nodemon'
+            'a11y'
             'create-react-app'
             'create-react-native-app'
-            'rimraf'
+            'exp'
+            'http-server'
+            'nodemon'
+            'npm'
             'npm-check-updates'
-            'a11y'
+            'rimraf'
         )
 
         # Install packages globally and quietly
