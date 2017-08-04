@@ -12,7 +12,6 @@ run_npm() {
             'nodemon'
             'create-react-app'
             'create-react-native-app'
-            'eslint'
             'rimraf'
             'npm-check-updates'
             'a11y'
