@@ -30,9 +30,6 @@ run_brew() {
             'yarn'
         )
 
-        # Tap necessary formulaes
-        brew tap homebrew/versions
-
         for index in ${!desired_formulae[*]}
         do
             if ! formula_exists ${desired_formulae[$index]}; then
