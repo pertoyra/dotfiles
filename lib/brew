@@ -23,10 +23,10 @@ run_brew() {
             'rmtrash'
             'ack'
             'bash'
-            'bash-completion2'
-            'node --with-full-icu'
+            'bash-completion@2'
+            'node'
             'tree'
-            'wget --with-iri'
+            'wget'
             'yarn'
         )
 
