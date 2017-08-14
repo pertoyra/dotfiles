@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # bash_profile
 
@@ -10,7 +10,7 @@ load_dotfiles() {
         $HOME/.dotfiles/shell/functions/*
         $HOME/.dotfiles/shell/bash_prompt
         $HOME/.dotfiles/shell/bash_paths
-        $(brew --prefix)/etc/bash_completion
+        $(brew --prefix)/share/bash-completion/bash_completion
         $HOME/.bash_profile.local
     )
 

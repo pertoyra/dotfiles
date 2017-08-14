@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Ask before setting hostname
 seek_confirmation "Would you like to change your hostname? (current: \"$(hostname)\")"
