@@ -17,6 +17,7 @@ run_npm() {
             'npm'
             'npm-check-updates'
             'rimraf'
+            'n'
         )
 
         # Install packages globally and quietly

@@ -88,7 +88,7 @@
     whitespace = fix
 
 [core]
-    editor = atom --wait
+    editor = code --wait
 
     # Use custom `.gitignore` and `.gitattributes`
     excludesfile = ~/.gitignore
@@ -146,21 +146,19 @@
 [push]
     default = simple
 
-[difftool "kdiff3"]
-    trustExitCode = false
-
-[difftool]
-    prompt = false
+[difftool "vscode"]
+    cmd = code --wait --diff --new-window $LOCAL $REMOTE
 
 [diff]
-    tool = kdiff3
-
-[mergetool "kdiff3"]
-    trustExitCode = false
+    tool = vscode
+    prompt = false
 
 [mergetool]
     keepBackup = false
 
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+
 [merge]
-    tool = kdiff3
+    tool = vscode
     default = simple
