@@ -162,3 +162,7 @@
 [merge]
     tool = vscode
     default = simple
+
+# local git config not to be committed
+[include]
+	path = ~/.gitconfig.local
