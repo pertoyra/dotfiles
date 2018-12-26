@@ -8,7 +8,6 @@ run_npm() {
 
         # List of npm packages
         local packages=(
-            'a11y'
             'create-react-app'
             'http-server'
             'nodemon'

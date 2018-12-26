@@ -138,8 +138,7 @@ if is_confirmed; then
     mirrorfiles
     source ${HOME}/.bash_profile
 else
-    printf "Aborting...\n"
-    exit 1
+    printf "Skipped updating dotfiles."
 fi
 
 # Ask before potentially overwriting macOS defaults
