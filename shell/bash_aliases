@@ -2,6 +2,9 @@
 
 # bash_aliases
 
+# Temporary alias to solve git translation to Swedish
+alias git="LANG=en_US.UTF-8 git"
+
 # Allow aliases to be with sudo
 alias sudo="sudo "
 
