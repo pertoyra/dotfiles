@@ -22,7 +22,6 @@ source ./lib/help
 source ./lib/utils
 source ./lib/brew
 source ./lib/npm
-source ./lib/atom
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
@@ -82,8 +81,6 @@ else
     e_header "Syncing dotfiles..."
     # Pull down the latest changes
     git pull --rebase origin master
-    # Update submodules
-    git submodule update --recursive --init --quiet
 fi
 
 # Install and update packages
@@ -95,8 +92,6 @@ else
     run_brew
     # Install Node packages
     run_npm
-    # Install Atom packages and copy configurations
-    run_atom
 fi
 
 link() {

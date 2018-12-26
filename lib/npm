@@ -10,14 +10,10 @@ run_npm() {
         local packages=(
             'a11y'
             'create-react-app'
-            'create-react-native-app'
-            'exp'
             'http-server'
             'nodemon'
-            'npm'
             'npm-check-updates'
             'rimraf'
-            'n'
         )
 
         # Install packages globally and quietly

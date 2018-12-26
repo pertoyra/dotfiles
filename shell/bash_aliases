@@ -2,9 +2,6 @@
 
 # bash_aliases
 
-# Atom
-alias a="atom"
-
 # Allow aliases to be with sudo
 alias sudo="sudo "
 
@@ -48,8 +45,8 @@ alias showdotfiles="defaults write com.apple.finder AppleShowAllFiles -bool true
 alias hidedotfiles="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 # Hide/show all desktop icons (useful when presenting)
-alias showdeskicons="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-alias hidedeskicons="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 
 # So that I don't delete stuff again...
 alias rm="echo Use 'del', or full path name for rm: /bin/rm"

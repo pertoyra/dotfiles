@@ -90,6 +90,13 @@ N.B. Because the `git/gitconfig` file is copied to `~/.gitconfig`, any private
 git configuration specified in `~/.bash_profile.local` will not be committed to
 your dotfiles repository.
 
+### Local/private Git configuration
+
+Instead of using `.bash_profile.local` to do Git configuration you may also
+create a `.gitconfig.local` which will be included in `.gitconfig`.
+
+This file can contain any Git config settings.
+
 ## Acknowledgements
 
 Inspiration and code was taken from many sources, including:

@@ -3,7 +3,7 @@
 # bash_config
 
 # Make subl the default editor
-export EDITOR="atom -w"
+export EDITOR="code -w"
 
 # Ignore duplicate commands in the history
 export HISTCONTROL=ignoredups
@@ -15,9 +15,6 @@ export HISTFILESIZE=10000
 # Increase the maximum number of commands to remember
 # (default is 500)
 export HISTSIZE=10000
-
-# Make some commands not show up in history
-export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 
 # Don't clear the screen after quitting a manual page
 export MANPAGER="less -X"

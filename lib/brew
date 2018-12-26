@@ -27,7 +27,7 @@ run_brew() {
             'node'
             'tree'
             'wget'
-            'yarn'
+            'michaeldfallen/formula/git-radar'
         )
 
         for index in ${!desired_formulae[*]}
