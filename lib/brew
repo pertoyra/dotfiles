@@ -24,7 +24,6 @@ run_brew() {
             'ack'
             'bash'
             'bash-completion@2'
-            'node'
             'tree'
             'wget'
             'michaeldfallen/formula/git-radar'
