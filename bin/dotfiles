@@ -81,6 +81,13 @@ if [[ $no_sync ]]; then
     printf "Skipped dotfiles sync.\n"
 else
     e_header "Syncing dotfiles..."
+
+    # Checking if working dir is clean
+    if output=$(git status --porcelain) && [ ! -z "$output" ]; then
+        e_error "Working directory must be clean, exiting..."
+        exit 1
+    fi
+
     # Pull down the latest changes
     git pull --rebase origin master
 fi
