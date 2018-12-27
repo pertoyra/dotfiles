@@ -18,6 +18,7 @@ run_brew() {
         local list_formulae
         local -a missing_formulae
         local -a desired_formulae=(
+            'n'
             'coreutils' # GNU core utilities (those that come with macOS are outdated)
             'git'
             'rmtrash'

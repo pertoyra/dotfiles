@@ -93,12 +93,9 @@ else
 fi
 
 # Install n and Node + npm
-if ! type_exists 'n'; then
-    e_header "Installing n..."
-    curl -L https://git.io/n-install | bash
-    e_header "Node and npm installed, restart your terminal and run dotfiles again."
-    read -p "Press [Enter] to continue..."
-    exit 0
+if type_exists 'n'; then
+    e_header "Updating Node to latest LTS."
+    sudo n lts
 fi
 
 # Install and update packages

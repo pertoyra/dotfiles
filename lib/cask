@@ -33,7 +33,6 @@ run_cask() {
         skype
         slack
         the-unarchiver
-        things
         visual-studio-code
         transmission
         vlc

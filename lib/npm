@@ -8,15 +8,18 @@ run_npm() {
 
         # List of npm packages
         local packages=(
-            'create-react-app'
             'http-server'
             'nodemon'
             'npm-check-updates'
-            'rimraf'
         )
 
+        # Configure global npm package folder
+        GLOBAL_NODE_MODULES=~/.node_modules
+        mkdir -p $GLOBAL_NODE_MODULES
+        npm config set prefix $GLOBAL_NODE_MODULES
+
         # Install packages globally and quietly
-        sudo npm install ${packages[@]} --global --quiet
+        npm install ${packages[@]} --global --quiet
 
         [[ $? ]] && e_success "Done"
     else
