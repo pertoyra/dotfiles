@@ -92,7 +92,7 @@ your dotfiles repository.
 
 ### Local/private Git configuration
 
-Instead of using `.bash_profile.local` to do Git configuration you may also
+Instead of using `.bash_profile.local` to do Git configuration you may instead
 create a `.gitconfig.local` which will be included in `.gitconfig`.
 
 This file can contain any Git config settings.

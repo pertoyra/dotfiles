@@ -26,6 +26,7 @@ run_brew() {
             'bash-completion@2'
             'tree'
             'wget'
+            'autojump'
             'michaeldfallen/formula/git-radar'
         )
 
