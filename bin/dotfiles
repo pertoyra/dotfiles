@@ -96,10 +96,11 @@ fi
 if [[ $no_packages ]]; then
     printf "Skipped package installations.\n"
 else
-    printf "Updating packages...\n"
-    # Install Homebrew formulae
+    printf "Updating Homebrew packages...\n"
     run_brew
-    # Install Node packages
+    printf "Updating casks...\n"
+    run_cask
+    printf "Updating npm packages...\n"
     run_npm
 fi
 
