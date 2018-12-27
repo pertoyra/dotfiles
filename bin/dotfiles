@@ -133,9 +133,6 @@ mirrorfiles() {
     e_success "Dotfiles update complete!"
 }
 
-# Set hostname
-source ./bin/hostname
-
 # Ask before potentially overwriting files
 seek_confirmation "Warning: This step may overwrite your existing dotfiles."
 
