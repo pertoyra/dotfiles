@@ -23,6 +23,7 @@ source ./lib/utils
 source ./lib/brew
 source ./lib/cask
 source ./lib/npm
+source ./lib/vscode
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
@@ -103,6 +104,8 @@ else
     run_cask
     printf "Updating npm packages...\n"
     run_npm
+    printf "Setting up VS Code...\n"
+    run_vscode
 fi
 
 link() {

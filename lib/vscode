@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+run_vscode() {
+    if ! type_exists 'code'; then
+        e_error "VS Code editor not installed, exiting..."
+        exit
+    fi
+
+    e_header "Copying VS Code configuration..."
+    cp -f configs/vscode/keybindings.json \
+          configs/vscode/settings.json \
+          ~/Library/Application\ Support/Code/User
+
+    [[ $? ]] && e_success "Done"
+
+}
