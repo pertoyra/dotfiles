@@ -50,7 +50,7 @@ fi;
 
 # Create prompt
 PS1="\[${orange}\]\u\[${white}\]@\[${yellow}\]\h\[${white}\]:\[${cyan}\]\w\[${reset}\]";
-PS1+="\$(git-radar --bash --fetch)";
+PS1+="\$(git-radar --bash)";
 PS1+="\[${bold}\]\[${white}\] →\[${reset}\]\[$(tput sgr0)\] ";
 export PS1;
 
