@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+DOTFILES_DIRECTORY="${HOME}/.dotfiles"
+
+source ${DOTFILES_DIRECTORY}/lib/utils
+
 # Ask before setting hostname
 seek_confirmation "Would you like to change your hostname? (current: \"$(hostname)\")"
 

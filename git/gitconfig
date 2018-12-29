@@ -8,7 +8,7 @@
     f = fetch -p
 
     # Amend changes with last commit
-    aa = "!f() { git add -A; git commit --amend  }; f"
+    aa = "!f() { git add -A; git commit --amend --reuse-message=HEAD; }; f"
 
     # View abbreviated SHA, description, and history graph of the latest 20 commits
     l = log --pretty=oneline -n 20 --graph --abbrev-commit

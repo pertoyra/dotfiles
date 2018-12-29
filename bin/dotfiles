@@ -78,7 +78,7 @@ fi
 
 # Conditionally sync with the remote repository
 if [[ $no_sync ]]; then
-    printf "Skipped dotfiles sync.\n"
+    e_header "Skipped dotfiles sync.\n"
 else
     e_header "Syncing dotfiles..."
 
@@ -96,19 +96,24 @@ fi
 if type_exists 'n'; then
     e_header "Updating Node to latest LTS."
     sudo n lts
+else 
+    e_header "Installing n"
+    brew install n
+    e_header "Updating Node to latest LTS."
+    sudo n lts
 fi
 
 # Install and update packages
 if [[ $no_packages ]]; then
-    printf "Skipped package installations.\n"
+    e_header "Skipped package installations."
 else
-    printf "Updating Homebrew packages...\n"
+    e_header "Updating Homebrew packages..."
     run_brew
-    printf "Updating casks...\n"
+    e_header "Updating casks..."
     run_cask
-    printf "Updating npm packages...\n"
+    e_header "Updating npm packages..."
     run_npm
-    printf "Setting up VS Code...\n"
+    e_header "Setting up VS Code..."
     run_vscode
 fi
 
@@ -144,7 +149,7 @@ if is_confirmed; then
     mirrorfiles
     source ${HOME}/.bash_profile
 else
-    printf "Skipped updating dotfiles."
+    e_header "Skipped updating dotfiles."
 fi
 
 # Ask before potentially overwriting macOS defaults
@@ -154,5 +159,5 @@ if is_confirmed; then
     bash ./bin/macosdefaults
     e_success "Successfully updated macOS settings! You may need to restart."
 else
-    printf "Skipped macOS settings update.\n"
+    e_header "Skipped macOS settings update."
 fi

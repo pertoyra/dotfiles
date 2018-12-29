@@ -7,10 +7,11 @@ run_vscode() {
     fi
 
     e_header "Copying VS Code configuration..."
+    VS_CODE_CONFIGS_DIR=~/Library/Application\ Support/Code/User
+    mkdir -p $VS_CODE_CONFIGS_DIR
     cp -f configs/vscode/keybindings.json \
           configs/vscode/settings.json \
           ~/Library/Application\ Support/Code/User
 
     [[ $? ]] && e_success "Done"
-
 }
