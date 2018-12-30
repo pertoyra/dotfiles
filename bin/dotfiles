@@ -96,7 +96,7 @@ fi
 if type_exists 'n'; then
     e_header "Updating Node to latest LTS."
     sudo n lts
-else 
+else
     e_header "Installing n"
     brew install n
     e_header "Updating Node to latest LTS."
@@ -135,6 +135,7 @@ mirrorfiles() {
     link "shell/bash_profile"         ".bash_profile"
     link "shell/curlrc"               ".curlrc"
     link "shell/inputrc"              ".inputrc"
+    link "shell/gitradarrc"           ".gitradarrc"
     link "git/gitattributes"          ".gitattributes"
     link "git/gitignore"              ".gitignore"
     link "configs/editorconfig"       ".editorconfig"

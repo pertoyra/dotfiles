@@ -39,6 +39,7 @@ load_dotfiles() {
         $HOME/.dotfiles/shell/functions/*
         $HOME/.dotfiles/shell/bash_prompt
         $HOME/.dotfiles/shell/bash_paths
+        $HOME/.dotfiles/shell/gitradarrc
         $(brew --prefix)/share/bash-completion/bash_completion
         $HOME/.bash_profile.local
     )
