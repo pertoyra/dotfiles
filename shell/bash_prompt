@@ -49,9 +49,9 @@ else
 fi;
 
 # Create prompt
-PS1="\[${orange}\]\u\[${white}\]@\[${yellow}\]\h\[${white}\]:\[${cyan}\]\w\[${reset}\]";
+PS1="\[${yellow}\]\u\[${white}\]:\[${cyan}\]\w\[${reset}\]";
 PS1+="\$(git-radar --bash)";
-PS1+="\[${bold}\]\[${white}\] →\[${reset}\]\[$(tput sgr0)\] ";
+PS1+="\n\[${bold}\]\[${white}\]$\[${reset}\]\[$(tput sgr0)\] ";
 export PS1;
 
 PS2="\[${yellow}\]→ \[${reset}\]";
