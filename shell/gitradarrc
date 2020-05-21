@@ -1,1 +1,0 @@
-GIT_RADAR_FORMAT=" \x01\\033[0;31m\x02(\x01\033[0m\x02%{remote: }%{branch}%{ :local}\x01\\033[0;31m\x02)\x01\033[0m\x02%{ :changes}"
