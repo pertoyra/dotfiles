@@ -1,0 +1,3 @@
+GIT_RADAR_FORMAT="$fg[red]($reset_color%{remote: }%{branch}%{ :local}$fg[red])$reset_color%{ :changes}"
+
+GIT_RADAR_COLOR_CHANGES_UNSTAGED=$fg[red]

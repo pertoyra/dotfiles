@@ -73,29 +73,44 @@ Host * 
     UseKeychain yes
 
 # Github
-Host github.com 
-    HostName github.com 
-    IdentityFile ~/.ssh/id_rsa.github.com
-
-# Bitbucket
-Host bitbucket.org
-    HostName bitbucket.org
-    IdentityFile ~/.ssh/id_rsa.bitbucket.org
-
+Host <hostname> 
+    HostName <hostname> 
+    IdentityFile ~/.ssh/id_rsa.<hostname>
 ```
 
-enable ohmyzsh plugins
-  -> autojump
-  -> zsh-syntax-highlighting
-  -> npm
-  -> yarn
-  -> autojump
+## Copy dotfiles
+Copy dotfiles stored in this repo to home folder:
+```
+$ cd <this repo>
+$ cp -R user/. ~
+```
 
+## Create local gitconfig
+Create `~/.gitconfig.local` which is linked from the gitconfig in this repo:
+```
+[user]
+    name = Per Töyrä
+    email = <email>
 
-copy/link git settings
+# Only needed if specific gitconfigs are needed for certain folders
+# [includeIf "gitdir:~/Repos/<customer>/"]
+#    path = ~/Repos/<customer>/.gitconfig
+```
 
-copy zsh settings
+## Copy VS Code settings
+Only needed until sync is implemented in vscode:
+```
+$ cp -R vscode/. ~/Library/Application\ Support/Code/User
+```
 
-copy vscode settings
+## Install macOS Terminal theme
+Double click the terminal theme file `Bright Lights.terminal` to install.
 
-set macos defaults
+## Set macOS defaults
+Run to set macOS defaults:
+```
+./macos
+```
+
+## Reboot
+Reboot the computer...
