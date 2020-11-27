@@ -11,6 +11,7 @@ Install homebrew packages
 $ brew install \
      n \
      git \
+     gh \
      rmtrash \
      ack \
      autojump \
@@ -57,8 +58,13 @@ Install dotnet core sdk from https://dot.net.
 ### Generate keys
 Generate new SSH keys for every hostname (i.e. github.com, bitbucket.org, ...):
 ```
-$ ssh_keygen -f ~/.ssh/id_rsa.<hostname>
+$ ssh_keygen -f ~/.ssh/id_rsa.<hostname+customer>
 ```
+e.g.
+```
+$ ssh_keygen -f ~/.ssh/id_rsa.github.com-parkero
+```
+
 Save passphrase to 1Password.
 
 ### Edit SSH config
@@ -73,9 +79,9 @@ Host * 
     UseKeychain yes
 
 # Github
-Host <hostname> 
-    HostName <hostname> 
-    IdentityFile ~/.ssh/id_rsa.<hostname>
+Host <hostname+customer, e.g. "github.com-parkero> 
+    HostName <real hostname> 
+    IdentityFile ~/.ssh/id_rsa.<hostname+customer>
 ```
 
 ## Copy dotfiles
