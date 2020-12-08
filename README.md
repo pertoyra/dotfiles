@@ -40,6 +40,7 @@ $ brew cask install \
        gitup \
        google-chrome \
        google-chrome-canary \
+       macpass \
        postman \
        slack \
        the-unarchiver \
