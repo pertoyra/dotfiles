@@ -105,7 +105,7 @@ Create `~/.gitconfig.local` which is linked from the gitconfig in this repo:
 ```
 
 ## Copy VS Code settings
-Only needed until sync is implemented in vscode:
+⚠️ Only needed if vscode sync is not working correctly:
 ```
 $ cp -R vscode/. ~/Library/Application\ Support/Code/User
 ```
