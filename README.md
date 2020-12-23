@@ -12,7 +12,6 @@ $ brew install \
      n \
      git \
      gh \
-     rmtrash \
      ack \
      autojump \
      tree \
@@ -20,7 +19,7 @@ $ brew install \
      mono \
      michaeldfallen/formula/git-radar \
      zsh-syntax-highlighting \
-     github/gh/gh
+     azure-cli
 ```
 
 Install Node LTS 
@@ -32,7 +31,7 @@ Install brew casks
 ```
 $ brew tap homebrew/cask-versions
 $ brew tap homebrew/cask-fonts
-$ brew cask install \
+$ brew install --cask \
        azure-data-studio \
        docker \
        firefox \
@@ -54,6 +53,12 @@ $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/instal
 ```
 
 Install dotnet core sdk from https://dot.net.
+
+Install Azure Functions Core Tools
+```
+$ brew tap azure/functions
+$ brew install azure-functions-core-tools@3
+```
 
 ## Setup SSH
 ### Generate keys
