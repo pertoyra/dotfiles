@@ -77,7 +77,7 @@ Save passphrase to 1Password.
 Create or edit `~/.ssh/config`:
 ```
 # Use identity files instead of SSH
-agentIdentitiesOnly yes
+IdentitiesOnly yes
 
 # Default
 Host * 
