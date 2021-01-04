@@ -73,7 +73,6 @@ plugins=(
   npm
   yarn
   autojump
-  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -106,6 +105,7 @@ fi
 
 export PATH="$HOME/.node_modules/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-#export PROMPT="$PROMPT\$(git-radar --zsh) "
+# export PROMPT="$PROMPT\$(git-radar --zsh) "
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
