@@ -105,7 +105,7 @@ fi
 
 export PATH="$HOME/.node_modules/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# export PROMPT="$PROMPT\$(git-radar --zsh) "
+source .prompt
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
