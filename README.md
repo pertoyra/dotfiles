@@ -1,128 +1,147 @@
 # Dotfiles
 
 ## Installation
-Install homebrew
-```    
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
 
-Install homebrew packages
+### Install homebrew
+
+Check https://brew.sh for latest install instructions.
+
+### Install homebrew packages
+
 ```
-$ brew install \
-     n \
-     git \
+brew install \
+     colima \
+     coreutils \
+     docker \
+     docker-buildx \
+     fish \
      gh \
-     ack \
-     autojump \
+     git \
+     go \
+     helm \
+     jq \
+     #kubernetes-cli \
+     #kubeseal \
+     lazygit \
+     n \
+     nmap \
+     starship \
      tree \
-     wget \
-     mono \
-     michaeldfallen/formula/git-radar \
-     zsh-syntax-highlighting \
-     azure-cli
+     zoxide
 ```
 
-Install Node LTS 
+Make sure to follow any caveats or instructions following the installation of above packages.
+
+### Install Node LTS
+
 ```
-$ sudo n lts
+sudo n lts
 ```
 
-Install brew casks
+### Install brew casks
+
 ```
-$ brew tap homebrew/cask-versions
-$ brew tap homebrew/cask-fonts
-$ brew install --cask \
-       azure-data-studio \
-       docker \
-       firefox \
-       font-fira-code \
-       gitup \
-       google-chrome \
-       google-chrome-canary \
-       macpass \
-       postman \
-       slack \
-       the-unarchiver \
-       visual-studio-code \
-       viscosity
+brew install --cask \
+     firefox \
+     font-fira-code \
+     font-fira-code-nerd-font \
+     ghostty \
+     google-chrome \
+     #google-chrome@canary \
+     #microsoft-auto-update \
+     #microsoft-teams \
+     slack \
+     spotify \
+     visual-studio-code
 ```
 
-install ohmyzsh
-```
-$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
+### Install dotnet SDK
 
-Install dotnet core sdk from https://dot.net.
-
-Install Azure Functions Core Tools
-```
-$ brew tap azure/functions
-$ brew install azure-functions-core-tools@3
-```
+Download and install dotnet SDK from https://dot.net.
 
 ## Setup SSH
+
 ### Generate keys
+
 Generate new SSH keys for every hostname (i.e. github.com, bitbucket.org, ...):
+
 ```
-$ ssh_keygen -f ~/.ssh/id_rsa.<hostname+customer>
-```
-e.g.
-```
-$ ssh_keygen -f ~/.ssh/id_rsa.github.com-parkero
+ssh_keygen -C <email> -f ~/.ssh/id_ed25519.<hostname>
 ```
 
-Save passphrase to 1Password.
+e.g.
+
+```
+ssh_keygen -C <email> -f ~/.ssh/id_ed25519.github.com
+```
+
+If multiple keys are needed for same hostname create another SSH key suffixed with an appropriate identifier, e.g.:
+
+```
+ssh_keygen -C <email> -f ~/.ssh/id_ed25519.github.com-my-private-account
+```
+
+Save passphrase to password manager.
 
 ### Edit SSH config
+
 Create or edit `~/.ssh/config`:
+
 ```
 # Use identity files instead of SSH
 IdentitiesOnly yes
 
 # Default
-Host * 
-    AddKeysToAgent yes 
+Host *
+    AddKeysToAgent yes
     UseKeychain yes
 
 # Github
-Host <hostname+customer, e.g. "github.com-parkero> 
-    HostName <real hostname> 
-    IdentityFile ~/.ssh/id_rsa.<hostname+customer>
+Host github.com                                # and suffix if not using default SSH key
+    HostName github.com                        # this should always be the actual hostname 
+    IdentityFile ~/.ssh/id_ed25519.github.com  # the key file to be used for this service
 ```
 
-## Copy dotfiles
-Copy dotfiles stored in this repo to home folder:
+### Upload public keys
+
+1. Upload the newly generated public keys to corresponding service.
+2. Test connection to the service.
+3. Enter the passphrase.
+4. Success 🎉
+
+## Bootstrap
+
 ```
-$ cd <this repo>
-$ cp -R user/. ~
+./install.sh
 ```
 
 ## Create local gitconfig
+
 Create `~/.gitconfig.local` which is linked from the gitconfig in this repo:
+
 ```
 [user]
     name = Per Töyrä
     email = <email>
 
+# If some repositories should have a specific user
+# [includeIf "gitdir:~/.dotfiles"]
+#    [user]
+#        email = <another email>
+
 # Only needed if specific gitconfigs are needed for certain folders
-# [includeIf "gitdir:~/Repos/<customer>/"]
+# [includeIf "gitdir:~/Repos/<some folder>/"]
 #    path = ~/Repos/<customer>/.gitconfig
 ```
 
-## Copy VS Code settings
-⚠️ Only needed if vscode sync is not working correctly:
-```
-$ cp -R vscode/. ~/Library/Application\ Support/Code/User
-```
-
-## Install macOS Terminal theme
-Double click the terminal theme file `Bright Lights.terminal` to install.
-
 ## Set macOS defaults
+
 Run to set macOS defaults:
+
 ```
 ./macos
 ```
 
 ## Reboot
+
 Reboot the computer...
