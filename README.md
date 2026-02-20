@@ -2,62 +2,21 @@
 
 ## Installation
 
-### Install homebrew
+### 1. Install Homebrew
 
 Check https://brew.sh for latest install instructions.
 
-### Install homebrew packages
+### 2. Install packages and apps
+
+CLI tools are in `Brewfile`, macOS apps are in `Brewfile.apps` — edit these to customize what gets installed.
+
+### 3. Bootstrap dotfiles
 
 ```
-brew install \
-     colima \
-     coreutils \
-     docker \
-     docker-buildx \
-     fish \
-     gh \
-     git \
-     go \
-     helm \
-     jq \
-     #kubernetes-cli \
-     #kubeseal \
-     lazygit \
-     n \
-     nmap \
-     starship \
-     tree \
-     zoxide
+./install.sh
 ```
 
-Make sure to follow any caveats or instructions following the installation of above packages.
-
-### Install Node LTS
-
-```
-sudo n lts
-```
-
-### Install brew casks
-
-```
-brew install --cask \
-     firefox \
-     font-fira-code \
-     font-fira-code-nerd-font \
-     ghostty \
-     google-chrome \
-     #google-chrome@canary \
-     #microsoft-auto-update \
-     #microsoft-teams \
-     slack \
-     spotify \
-     visual-studio-code
-```
-
-### Install dotnet SDK
-
-Download and install dotnet SDK from https://dot.net.
+This installs all packages from both Brewfiles, sets fish as the default shell, and deploys dotfiles via symlinks.
 
 ## Setup SSH
 
@@ -78,7 +37,7 @@ ssh_keygen -C <email> -f ~/.ssh/id_ed25519.github.com
 If multiple keys are needed for same hostname create another SSH key suffixed with an appropriate identifier, e.g.:
 
 ```
-ssh_keygen -C <email> -f ~/.ssh/id_ed25519.github.com-my-private-account
+ssh_keygen -C <email> -f ~/.ssh/id_ed25519.github.com-my-other-account
 ```
 
 Save passphrase to password manager.
@@ -98,7 +57,7 @@ Host *
 
 # Github
 Host github.com                                # and suffix if not using default SSH key
-    HostName github.com                        # this should always be the actual hostname 
+    HostName github.com                        # this should always be the actual hostname
     IdentityFile ~/.ssh/id_ed25519.github.com  # the key file to be used for this service
 ```
 
@@ -108,12 +67,6 @@ Host github.com                                # and suffix if not using default
 2. Test connection to the service.
 3. Enter the passphrase.
 4. Success 🎉
-
-## Bootstrap
-
-```
-./install.sh
-```
 
 ## Create local gitconfig
 

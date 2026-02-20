@@ -1,0 +1,13 @@
+# Browsers
+cask "firefox"
+cask "google-chrome"
+
+# Terminal
+cask "ghostty"
+
+# Editor
+cask "visual-studio-code"
+
+# Communication & productivity
+cask "slack"
+cask "spotify"

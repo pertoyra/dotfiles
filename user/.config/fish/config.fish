@@ -14,10 +14,10 @@ set -gx PATH $HOME/.node_modules/bin $PATH
 starship init fish | source
 
 ## Set editor
-if set -q SSH_CONNECTION
-    set -gx EDITOR code
-else
+if set -q SSH_TTY
     set -gx EDITOR nano
+else
+    set -gx EDITOR "code --wait"
 end
 
 ## Init zoxide
