@@ -12,9 +12,10 @@ set -euo pipefail
 echo "🔧 Configuring macOS defaults..."
 
 #####################################
-# RESOLVE ACTIVE CONSOLE USER
+# HELPERS
 #####################################
 
+# Resolve active console user
 CURRENT_USER=$(stat -f %Su /dev/console)
 USER_ID=$(id -u "$CURRENT_USER")
 
@@ -135,12 +136,10 @@ sudo defaults write /Library/Preferences/com.apple.commerce AutoUpdate -bool tru
 
 echo "→ Configuring Terminal..."
 
+# Do not allow other processes to observe keyboard input (only Terminal.app)
 as_user write com.apple.terminal SecureKeyboardEntry -bool true
 
-#####################################
-# TOUCH ID FOR SUDO
-#####################################
-
+# Enable Touch ID for sudo
 echo "→ Enabling Touch ID for sudo..."
 
 if ! grep -q "pam_tid.so" /private/etc/pam.d/sudo_local 2>/dev/null; then
