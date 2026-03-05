@@ -27,6 +27,7 @@ zoxide init fish | source
 
 ### Shortcuts
 alias g="git"
+alias lg="lazygit"
 alias npr="npm run"
 alias k="kubectl"
 alias icloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
