@@ -21,6 +21,9 @@ fish -c "
   deploy_user
 "
 
+echo "==> Installing yazi plugins..."
+ya pkg install
+
 # Remind about local gitconfig if missing
 if [ ! -f "$HOME/.gitconfig.local" ]; then
   echo ""

@@ -1,0 +1,23 @@
+[mgr]
+prepend_keymap = [
+  # Vim-style f<char> jumps to file starting with that character
+  { on = "f", run = "plugin jump-to-char", desc = "Jump to character" },
+
+  # Filter files continuously (smart-filter stays active until dismissed)
+  { on = "F", run = "plugin smart-filter", desc = "Filter files" },
+
+  # Toggle the preview pane — useful when you need more space
+  { on = "T", run = "plugin toggle-pane max-preview", desc = "Maximize preview" },
+
+  # Built-in: zoxide — jump to frequently used directories
+  { on = "Z", run = "plugin zoxide", desc = "Zoxide jump" },
+
+  # Built-in: fzf — fuzzy search directories
+  { on = "z", run = "plugin fzf", desc = "Fzf search" },
+
+  # Show/hide hidden files
+  { on = ".", run = "hidden toggle", desc = "Toggle hidden files" },
+
+  # Lazygit
+  { on = ["l", "g"], run = "shell 'lazygit' --block", desc = "Open lazygit" }
+]
