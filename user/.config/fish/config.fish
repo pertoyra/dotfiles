@@ -5,10 +5,16 @@ set -gx PATH /usr/local/bin $PATH
 eval (/opt/homebrew/bin/brew shellenv)
 set -gx MACOS_CACHE_DIR $HOME/Library/Caches
 
+## Go – keep GOPATH out of $HOME
+set -gx GOPATH $HOME/.local/share/go
+
 ## Node user-global modules
 mkdir -p ~/.node_modules
 npm config set prefix ~/.node_modules
 set -gx PATH $HOME/.node_modules/bin $PATH
+
+## Add local bin
+set -gx PATH $HOME/.local/bin $PATH
 
 ## Starship prompt
 starship init fish | source
