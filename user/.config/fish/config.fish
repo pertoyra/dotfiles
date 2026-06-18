@@ -9,8 +9,6 @@ set -gx MACOS_CACHE_DIR $HOME/Library/Caches
 set -gx GOPATH $HOME/.local/share/go
 
 ## Node user-global modules
-mkdir -p ~/.node_modules
-npm config set prefix ~/.node_modules
 set -gx PATH $HOME/.node_modules/bin $PATH
 
 ## Add local bin

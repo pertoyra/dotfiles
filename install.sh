@@ -21,6 +21,10 @@ fish -c "
   deploy_user
 "
 
+echo "==> Configuring Node user-global modules..."
+mkdir -p ~/.node_modules
+npm config set prefix ~/.node_modules
+
 echo "==> Installing yazi plugins..."
 ya pkg install
 
