@@ -2,6 +2,7 @@
 brew "fish"
 brew "starship"
 brew "zoxide"
+brew "tmux"
 
 # Git & GitHub
 brew "git"
