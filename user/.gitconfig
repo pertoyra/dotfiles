@@ -54,6 +54,12 @@
     # Interactive rebase with the given number of latest commits
     reb = "!r() { git rebase -i HEAD~$1; }; r"
 
+    # Using fzf for a nice diff experience
+    fd = "!f() { \
+        preview=\"git diff $@ --color=always -- {-1}\"; \
+        git diff $@ --name-only | fzf -m --ansi --preview \"$preview\"; \
+    }; f"
+
     # Find branches containing commit
     fb = "!f() { git branch -a --contains $1; }; f"
 
@@ -115,6 +121,9 @@
     # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
     precomposeunicode = false
 
+    # Using git-delta
+    pager = delta
+
 [credential]
     helper = osxkeychain
 
@@ -142,6 +151,8 @@
 [diff]
     # Detect copies as well as renames
     renames = copies
+    tool = vscode
+    prompt = false
 
 [help]
     # Automatically correct and execute mistyped commands
@@ -150,6 +161,15 @@
 [merge]
     # Include summaries of merged commits in newly created merge commit messages
     log = true
+    tool = vscode
+    default = simple
+    conflictStyle = zdiff3
+
+[mergetool]
+    keepBackup = false
+
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
 
 [push]
     default = simple
@@ -161,19 +181,12 @@
 [difftool "vscode"]
     cmd = code --wait --diff --new-window $LOCAL $REMOTE
 
-[diff]
-    tool = vscode
-    prompt = false
+[interactive]
+    diffFilter = delta --color-only
 
-[mergetool]
-    keepBackup = false
-
-[mergetool "vscode"]
-    cmd = code --wait $MERGED
-
-[merge]
-    tool = vscode
-    default = simple
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
 
 # local git config not to be committed
 [include]

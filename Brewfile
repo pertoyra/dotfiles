@@ -7,10 +7,11 @@ brew "zoxide"
 brew "git"
 brew "gh"
 brew "lazygit"
+brew "git-delta"
 
 # Languages & runtimes
 brew "go"
-brew "n"              # Node version manager
+brew "n"
 
 # Container & Kubernetes
 brew "colima"
