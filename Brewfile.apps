@@ -11,4 +11,3 @@ cask "zed"
 
 # Communication & productivity
 cask "slack"
-cask "spotify"
