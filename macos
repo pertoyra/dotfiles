@@ -70,7 +70,7 @@ as_user write com.apple.dock wvous-tr-modifier -int 0
 echo "→ Configuring keyboard..."
 
 as_user write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-as_user write NSGlobalDomain KeyRepeat -int 1
+as_user write NSGlobalDomain KeyRepeat -int 5
 as_user write NSGlobalDomain InitialKeyRepeat -int 10
 as_user write NSGlobalDomain AppleKeyboardUIMode -int 3
 as_user write NSGlobalDomain com.apple.keyboard.fnState -bool true
