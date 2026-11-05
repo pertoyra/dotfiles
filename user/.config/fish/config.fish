@@ -14,6 +14,9 @@ set -gx PATH $HOME/.node_modules/bin $PATH
 ## Add local bin
 set -gx PATH $HOME/.local/bin $PATH
 
+## Ensure global history
+set -gx fish_history fish
+
 ## Starship prompt
 starship init fish | source
 

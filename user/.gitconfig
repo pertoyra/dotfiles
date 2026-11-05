@@ -14,6 +14,12 @@
 
     # View abbreviated SHA, description, and history graph of the latest 20 commits
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    # Log with grep and highlight
+    lh = "!f() { p=\"\"; while [ $# -gt 0 ] && [ \"$1\" != \"--\" ]; do p=\"$p$1|\"; shift; done; [ \"$1\" = \"--\" ] && shift; git log --pretty=oneline -n 20 --graph --abbrev-commit --decorate --color=always \"$@\" | GREP_COLOR='1;30;48;5;213' grep --color=always -E \"${p}$\"; }; f"
+    # Log and exclude certain branches from the history graph: `git log <branch-to-exclude> ...`
+    lx = "!f() { args=(); for b in \"$@\"; do args+=(--exclude=\"refs/heads/$b\" --exclude=\"refs/remotes/origin/$b\"); done; git log -n 20 --oneline --graph \"${args[@]}\" --all; }; f"
+    # Log the history graph of the current branch: `git lo [branch-name]`
+    lo = "!f() { b=\"${1:-$(git branch --show-current)}\"; m=$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null); m=\"${m#origin/}\"; m=\"${m:-master}\"; set -- \"$m\" \"$b\"; u=$(git rev-parse --abbrev-ref --symbolic-full-name \"$b@{upstream}\" 2>/dev/null) || u=\"origin/$b\"; git rev-parse --verify --quiet \"$u\" >/dev/null && set -- \"$@\" \"$u\"; git log -n 20 --oneline --graph \"$@\"; }; f"
 
     # View the current working tree status using the short format
     s = status -s
